@@ -6,7 +6,7 @@ const login = require('./Imports/api/Auth/Login')
 var authenticate = require('./Imports/api/Auth/Authenticate')
 
 // database folder
-var database = require('./Imports/api/Database/database')
+var database = require('./Imports/api/DataAccess/database')
 
 // product folder
 const product = require('./Imports/api/Controller/Product/product')

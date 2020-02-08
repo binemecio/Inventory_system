@@ -1,7 +1,5 @@
-var mysql = require('mysql');
 var express = require('express')
 var jwt = require('jsonwebtoken')
-var app = express()
 var route = express.Router()
 var authenticate = require('./Authenticate')
 // initialize body parse

@@ -1,6 +1,5 @@
 var mysql = require('mysql')
 var express = require('express')
-var jwt = require('jsonwebtoken')
 var app = express()
 // initialize body parse
 var bodyParser = require('body-parser')

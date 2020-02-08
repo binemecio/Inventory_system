@@ -1,0 +1,19 @@
+(Basic lists) filters for the next lists:
+- Producst
+- Providers
+- Invoices
+- Customers
+- Brach offices
+- Stores
+- Purchase orders
+
+Advance filters:
+[Products]
+- Most selled products
+- Less selled products
+- ..
+
+[Customer]
+- Customer with most purchases
+- ...
+

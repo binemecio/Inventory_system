@@ -1,11 +1,9 @@
-var mysql = require('mysql');
 var express = require('express')
-var jwt = require('jsonwebtoken')
 var app = express()
 var route = express.Router()
 
 var authenticate = require('../../Auth/Authenticate')
-var databaseHelper = require('../../database/database')
+var databaseHelper = require('../../DataAccess/database')
 // initialize body parse
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true }))
