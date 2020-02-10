@@ -1,5 +1,6 @@
-var express = require('express')
-var jwt = require('jsonwebtoken')
+import express from 'express'
+import jsonwebtoken from 'jsonwebtoken'
+const verify = jsonwebtoken.verify
 var app = express()
 
 var privateKey = '23423434'
@@ -12,7 +13,7 @@ function verifyIfTokenIsCorrect(req, callback)
     }
     token = token.replace('Bearer ', '')
 
-    jwt.verify(token, privateKey, function(err, user) {
+    verify(token, privateKey, function(err, user) {
       if (err) {
         callback({ status: false , message : "Invalid token" })
       }
@@ -21,6 +22,8 @@ function verifyIfTokenIsCorrect(req, callback)
       }
     })
 }
+export default Object.freeze({
+  verifyIfTokenIsCorrect, privateKey
+})
+export { verifyIfTokenIsCorrect, privateKey }
 
-exports.privateKey = privateKey
-exports.verifyIfTokenIsCorrect = verifyIfTokenIsCorrect

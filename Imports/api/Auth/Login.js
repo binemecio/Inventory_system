@@ -1,13 +1,16 @@
-var express = require('express')
-var jwt = require('jsonwebtoken')
-var route = express.Router()
-var authenticate = require('./Authenticate')
+import Express from 'express'
+import jsw from 'jsonwebtoken'
+const sign = jsw.sign
+var loginRoute = Express.Router()
+import privateKey from './authenticate.js'
 // initialize body parse
-var bodyParser = require('body-parser')
-route.use(bodyParser.urlencoded({ extended: false }))
-route.use(bodyParser.json())
-route.use(bodyParser.json({limit:'10mb'}))
-route.post('/auth', function(req, res){
+import bodyparser from 'body-parser'
+const urlencoded = bodyparser.urlencoded
+const json = bodyparser.json
+loginRoute.use(urlencoded({ extended: false }))
+loginRoute.use(json())
+loginRoute.use(json({limit:'10mb'}))
+loginRoute.post('/auth', function(req, res){
         var user = req.body.username
         var password = req.body.password
 
@@ -22,8 +25,7 @@ route.post('/auth', function(req, res){
                 username : user
         }
 
-        var token = jwt.sign(tokenData, authenticate.privateKey, { expiresIn: '2h'  })
+        var token = sign(tokenData, privateKey, { expiresIn: '2h'  })
         res.send( { token } )
 })
-
-module.exports = route
+export default loginRoute

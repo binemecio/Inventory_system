@@ -1,11 +1,11 @@
-var express = require('express')
+var express = require('./node_modules/express')
 var app = express()
 var route = express.Router()
 
-var authenticate = require('../../Auth/Authenticate')
+var authenticate = require('../../auth/authenticate')
 var databaseHelper = require('../../DataAccess/database')
 // initialize body parse
-var bodyParser = require('body-parser')
+var bodyParser = require('./node_modules/body-parser')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json({limit:'10mb'}))
 app.use(bodyParser.json())

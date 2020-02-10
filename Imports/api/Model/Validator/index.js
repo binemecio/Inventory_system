@@ -1,4 +1,4 @@
-import { validate } from 'joi'
+import validate from 'joi'
 
 export default function(schema)
 {

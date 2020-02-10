@@ -1,10 +1,10 @@
-import { object, string, number } from 'joi'
+import joi from 'joi'
 
-export default object().keys({
-  name: string().required().error(() => 'must have name as string'),
-  sizes: string().required().error(() => 'must have sizes as string'),
-  color: string().required().error(() => 'must have color as string'),
-  buyPrice: number().required().error(() => 'must have buyPrice as number'),
-  minPrice: number().error(() => 'minPrice must be number'),
-  deliveryPrice: number().error(() => 'delivery must be number'),
+export default joi.object().keys({
+  name: joi.string().required().error(() => 'must have name as string'),
+  sizes: joi.string().required().error(() => 'must have sizes as string'),
+  color: joi.string().required().error(() => 'must have color as string'),
+  buyPrice: joi.number().required().error(() => 'must have buyPrice as number'),
+  minPrice: joi.number().error(() => 'minPrice must be number'),
+  deliveryPrice: joi.number().error(() => 'delivery must be number'),
 })

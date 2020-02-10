@@ -1,0 +1,36 @@
+{
+  "type": "module",
+  "name": "inventory",
+  "version": "1.0.0",
+  "description": "inventory system",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mariadb": "^2.2.0",
+    "mysql": "^2.17.1",
+    "sequelize": "^5.21.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binemecio/Inventory_system.git"
+  },
+  "author": "binemecio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binemecio/Inventory_system/issues"
+  },
+  "homepage": "https://github.com/binemecio/Inventory_system#readme"
+}

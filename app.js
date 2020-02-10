@@ -1,22 +1,19 @@
-var express = require('express')
+import express from 'express'
+import bodyParser from 'body-parser'
+import { getProductList, createProduct } from './Imports/api/controller/product/index.js'
+import makeCallback from './Imports/api/express-callback/index.js'
+import loginRoute from './Imports/api/auth/login.js'
+
 var app = express()
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json({limit:'10mb'}))
+app.use(bodyParser.json())
 
 // login folder
-const login = require('./Imports/api/Auth/Login')
-var authenticate = require('./Imports/api/Auth/Authenticate')
 
-// database folder
-var database = require('./Imports/api/DataAccess/database')
-
-// product folder
-const product = require('./Imports/api/Controller/Product/product')
-
-app.get('/', (req, res) => {
-    res.write('Welcome');
-    res.end()
-})
-.use(product)
-.use(login);
+app.post('/getProductList',makeCallback(getProductList))
+app.post('/addProduct',makeCallback(createProduct))
+.use(loginRoute);
 
 app.listen(8080, function(){
     console.log('Started server')
