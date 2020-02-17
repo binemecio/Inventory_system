@@ -20,7 +20,7 @@
     "@babel/preset-env": "^7.8.4"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
+    "start:server": "babel-node -- ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
